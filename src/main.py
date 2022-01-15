@@ -1,6 +1,7 @@
 from os import path, system
 from winshell import startup
 from sys import argv
+from shutil import copyfile
 
 startup_path = startup()
 local = path.dirname(argv[0])
@@ -16,8 +17,6 @@ else:
         pass
     else:
 
-        command = f"copy \"{file}\" \"{dst}\""
-
-        system(command)
+        copyfile(file, dst)
 
         system(f"start \"\" \"{startup_path}\System_StartUp_Apps.exe\"")

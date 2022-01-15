@@ -1,19 +1,10 @@
 from keyboard import is_pressed
 from pyperclip import copy
 from time import sleep
-import os.path
-from tempfile import gettempdir
-from json import load, dump
 from random import randint
 
-def json_create():
+def main():
 
-    temp = gettempdir()
-    
-    exist = os.path.exists(f"{temp}/log_app_build/log/log.json")
-    if exist == True: return
-
-    f = open(f"{temp}/log_app_build/log/log.json", "x")
     data = {}
     data['text'] = []
     data['text'].append({
@@ -48,22 +39,6 @@ def json_create():
         '29': '90 degrees',
         '30': 'win'
     })
-    dump(data, f, indent=4)
-    f.close()
-
-
-
-def main():
-
-    json_create()
-    
-    temp = gettempdir()
-
-    f = open(f"{temp}/log_app_build/log/log.json", "r")
-
-    data = load(f)
-
-    f.close()
         
     rand = randint(1,30)
 
@@ -72,4 +47,3 @@ def main():
     if is_pressed('ctrl') and is_pressed('c'):
         sleep(.5)
         copy(msg)
-

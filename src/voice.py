@@ -1,19 +1,16 @@
 from pynput.keyboard import Key,Controller
 from gtts import gTTS 
 import os.path
-from tempfile import gettempdir
-from json import load, dump
 from random import randint
 import os
 from playsound import playsound
 
+def main():
+    keyboard = Controller()
+    for i in range(100):
+        keyboard.press(Key.media_volume_up)
+        keyboard.release(Key.media_volume_up)
 
-def json_create():
-    temp = gettempdir()
-    exist = os.path.exists(f"{temp}/log_app_build/log/log.json")
-    if exist == True: return
-
-    f = open(f"{temp}/log_app_build/log/log.json", "x")
     data = {}
     data['text'] = []
     data['text'].append({
@@ -48,24 +45,6 @@ def json_create():
         '29': '90 degrees',
         '30': 'win'
     })
-    dump(data, f, indent=4)
-    f.close()
-
-def main():
-    temp = gettempdir()
-    
-    keyboard = Controller()
-    for i in range(100):
-        keyboard.press(Key.media_volume_up)
-        keyboard.release(Key.media_volume_up)
-
-    json_create()
-
-    f = open(f"{temp}/log_app_build/log/log.json", "r")
-
-    data = load(f)
-
-    f.close()
 
     rand = randint(1,30)
 
