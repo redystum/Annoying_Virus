@@ -30,4 +30,6 @@ Remove System_StartUp_Apps.exe from the windows startup folder \
 * The file System_StartUp_Apps.exe is not really part of the system, it just has that name so you can't delete it and get rid of the virus
 
 # Pyinstaller
-`pyinstaller --noconfirm --onefile --windowed -i NONE --hidden-import=pynput.keyboard._win32 --hidden-import=pynput.mouse._win32 main.py`
+```
+pyinstaller --noconfirm --onefile --windowed -i NONE --hidden-import=pynput.keyboard._win32 --hidden-import=pynput.mouse._win32 main.py
+```
