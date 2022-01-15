@@ -2,7 +2,7 @@
 A "virus" just to make fun of your friend, it's just annoying, it won't damage or steal anything!
 
 # How it works
-when the file is executed it will be copied into the windows startup folder. (it runs as soon as it is ejected) \
+when the file is executed it will be copied into the windows startup folder. \
 Once in the startup folder when the pc is turned on the virus will run.
 
 # What he does
