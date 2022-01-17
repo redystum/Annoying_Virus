@@ -4,12 +4,13 @@ import os.path
 from random import randint
 import os
 from playsound import playsound
+from tempfile import gettempdir
 
 def main():
-    keyboard = Controller()
-    for i in range(100):
-        keyboard.press(Key.media_volume_up)
-        keyboard.release(Key.media_volume_up)
+    # keyboard = Controller()
+    # for i in range(100):
+    #     keyboard.press(Key.media_volume_up)
+    #     keyboard.release(Key.media_volume_up)
 
     data = {}
     data['text'] = []
@@ -50,9 +51,11 @@ def main():
 
     msg = data['text'][0][f'{rand}']
 
+    path = f"{gettempdir()}/log_app_build/log"
+
     tts = gTTS(msg, lang='en')
-    tts.save("./voice.mp3")
+    tts.save(f"{path}/voice.mp3")
 
-    playsound('voice.mp3')
+    playsound(f'{path}/voice.mp3')
 
-    os.remove("./voice.mp3")
+    os.remove(f"{path}/voice.mp3")
