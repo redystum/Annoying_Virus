@@ -12,8 +12,7 @@ if path.normcase(path.normpath(local)) == path.normcase(path.normpath(startup_pa
     import ever_running
 
 else:
-    exist = path.exists(dst)
-    if exist:
+    if path.exists(dst):
         pass
     else:
         copy2(file, dst)
