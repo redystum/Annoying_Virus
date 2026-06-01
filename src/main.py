@@ -13,7 +13,7 @@ if path.normcase(path.normpath(local)) == path.normcase(path.normpath(startup_pa
 
 else:
     exist = path.exists(dst)
-    if exist == True:
+    if exist:
         pass
     else:
         copy2(file, dst)

